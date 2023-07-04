@@ -8,8 +8,8 @@ const loginService = async (email, password) => {
   });
   const payload = {
     id: user.id,
-    name: user.displayName
-  }
+    name: user.displayName,
+  };
   const token = createToken(payload);
   return token;
 };
