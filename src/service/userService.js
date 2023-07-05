@@ -10,9 +10,14 @@ const createUser = async (displayName, email, password, image) => {
   };
   const token = createToken(payload);
   return token;
-//   return userCreated;
+};
+
+const getAll = async () => {
+  const allUsers = User.findAll({ attributes: { exclude: ['password'] } });
+  return allUsers;
 };
 
 module.exports = {
   createUser,
+  getAll,
 };
