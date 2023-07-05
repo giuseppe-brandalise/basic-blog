@@ -7,7 +7,7 @@ const validadeToken = (req, res, next) => {
   }
   try {
     const validation = decodeToken(authorization);
-    req.user = validation.data;
+    req.user = validation;
     next();
 } catch (e) {
       return res.status(401).json({ message: 'Expired or invalid token' });
