@@ -9,7 +9,7 @@ const createCategory = async (req, res) => {
 const getAll = async (req, res) => {
   const serviceResponse = await categoryService.getAll();
   return res.status(200).json(serviceResponse);
-}
+};
 
 module.exports = {
   createCategory,
