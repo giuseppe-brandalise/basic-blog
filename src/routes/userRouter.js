@@ -11,6 +11,9 @@ const { validadeToken } = require('../middlewares/tokenMiddlewares');
 const userRouter = express.Router();
 
 userRouter.post('/', verifyName, verifyEmail, verifyPassword, userController.createUser);
+
+userRouter.delete('/me', validadeToken, userController.deleteUser);
+
 userRouter.get('/', validadeToken, userController.getAll);
 userRouter.get('/:id', validadeToken, userController.getById);
 
