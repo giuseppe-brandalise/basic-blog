@@ -1,7 +1,7 @@
 const { User } = require('../models');
 const { createToken } = require('../utils/JWT');
 
-const loginService = async (email, password) => {
+const doLogin = async (email, password) => {
   const user = await User.findOne({
       attributes: ['id', 'displayName'],
       where: { email, password },
@@ -14,4 +14,4 @@ const loginService = async (email, password) => {
   return token;
 };
 
-module.exports = { loginService };
+module.exports = { doLogin };
