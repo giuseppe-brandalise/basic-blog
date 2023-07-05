@@ -12,5 +12,6 @@ const userRouter = express.Router();
 
 userRouter.post('/', verifyName, verifyEmail, verifyPassword, userController.createUser);
 userRouter.get('/', validadeToken, userController.getAll);
+userRouter.get('/:id', validadeToken, userController.getById);
 
 module.exports = userRouter;
