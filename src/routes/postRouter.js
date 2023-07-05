@@ -20,7 +20,9 @@ postRouter.post(
 );
 postRouter.get('/', validadeToken, postController.getAll);
 postRouter.get('/:id', validadeToken, postController.getById);
+
 postRouter.put('/:id', validadeToken, verifyFieldsEdit, postController.updatePost);
 
+postRouter.delete('/:id', validadeToken, postController.deletePost);
 
 module.exports = postRouter;
